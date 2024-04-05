@@ -1,7 +1,11 @@
-import { Context, Hono } from 'https://deno.land/x/hono/mod.ts'
+import { Hono } from 'hono';
+// import cors from "npm:cors";
+import { cors } from "hono/middleware.ts"
+
+import linkList from "@/linkList/index.ts";
 
 const app = new Hono()
-
-app.get('/', (c: Context) => c.text('Hello Deno!'))
-
+app.use(cors())
+app.route("/linkList", linkList);
+app.get("/*", c => c.text("404 未定义的路由"))
 Deno.serve(app.fetch)
