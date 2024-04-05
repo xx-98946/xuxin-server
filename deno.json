@@ -2,7 +2,8 @@
   "imports": {
     "@/": "./",
     "hono": "https://deno.land/x/hono@v4.2.2/mod.ts",
-    "hono/": "https://deno.land/x/hono@v4.2.2/"
+    "hono/": "https://deno.land/x/hono@v4.2.2/",
+    "std/": "https://deno.land/std/"
   },
   "tasks": {
     "dev": "DENO_KV_ACCESS_TOKEN=ddp_Ng83tAobRKVU52NQFJbg1rPBXRPNnx24URzH deno run -A --unstable-hmr=./ --unstable-kv index.ts",
