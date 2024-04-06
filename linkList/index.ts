@@ -23,6 +23,11 @@ linkList
         }
         return c.json(res);
     })
+    .delete("/:id", async (c) => {
+        const id = c.req.param("id");
+        await kv.delete(["link-list", id]);
+        return c.json({ message: `删除${id}成功` });
+    })
 
 
 export default linkList;
