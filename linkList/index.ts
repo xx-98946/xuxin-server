@@ -15,7 +15,11 @@ linkList
         const entries = kv.list<ILinkItem>(selector);
         const res = [];
         for await (const entry of entries) {
-            res.push(entry);
+            const { key, value } = entry
+            res.push({
+                key,
+                ...value
+            });
         }
         return c.json(res);
     })
